@@ -33,3 +33,21 @@ Each section will display key metrics and trends through interactive visualizati
 #### **Inventory Insights**
 10. **Which products are running low on stock and need reordering?**
 11. **Are there products with surplus stock or low demand?**
+
+
+### **Solution Plan as Tables**
+
+|**Page**|**Focus**|**Sections**|**Questions Answered**|
+|---|---|---|---|
+|**Page 1**|**Sales Overview**|KPIs, Sales Trends, Category Revenue, Top Products|Total sales, transaction volume, average spend, top categories, and products|
+|**Page 2**|**Customer Insights**|KPIs, Customer Segments, Top Customers, Regional Analysis|Top customers, average spend, customer loyalty, regional performance|
+|**Page 3**|**Inventory & Operations**|KPIs, Stock Status, Payment Methods, Product Turnover|Stock at risk, overstocked products, payment methods, product turnover|
+
+Average Spend per Customer( Calculates the average amount spent per customer. )
+```
+DIVIDE(SUM(Sales[TotalSales]), DISTINCTCOUNT(Sales[CustomerID]), 0)
+```
+Total Sales by Category( Sums total sales for each product category. )
+```
+SUMX(FILTER(Sales, Sales[Category] = "CategoryName"), Sales[TotalSales])
+```
